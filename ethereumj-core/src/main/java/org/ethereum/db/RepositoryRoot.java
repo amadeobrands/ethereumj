@@ -44,9 +44,9 @@ public class RepositoryRoot extends RepositoryImpl {
         @Override
         protected synchronized StorageCache create(byte[] key, StorageCache srcCache) {
             AccountState accountState = accountStateCache.get(key);
-            Serializer<byte[], byte[]> keyCompositor = new NodeKeyCompositor(key);
-            Source<byte[], byte[]> composingSrc = new SourceCodec.KeyOnly<>(trieCache, keyCompositor);
-            TrieImpl storageTrie = createTrie(composingSrc, accountState == null ? null : accountState.getStateRoot());
+//            Serializer<byte[], byte[]> keyCompositor = new NodeKeyCompositor(key);
+//            Source<byte[], byte[]> composingSrc = new SourceCodec.KeyOnly<>(trieCache, keyCompositor);
+            TrieImpl storageTrie = createTrie(trieCache, accountState == null ? null : accountState.getStateRoot());
             return new StorageCache(storageTrie);
         }
 

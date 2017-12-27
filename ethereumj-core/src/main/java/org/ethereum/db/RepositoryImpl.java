@@ -141,7 +141,8 @@ public class RepositoryImpl implements Repository, org.ethereum.facade.Repositor
 
     // composing a key as there can be several contracts with the same code
     private byte[] codeKey(byte[] codeHash, byte[] addr) {
-        return NodeKeyCompositor.compose(codeHash, addr);
+//        return NodeKeyCompositor.compose(codeHash, addr);
+        return codeHash;
     }
 
     @Override

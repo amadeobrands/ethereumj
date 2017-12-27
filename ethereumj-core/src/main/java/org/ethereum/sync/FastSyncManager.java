@@ -267,12 +267,12 @@ public class FastSyncManager {
         }
 
         byte[] key() {
-            if (type == TrieNodeType.STORAGE ||
-                    type == TrieNodeType.CODE) {
-                return NodeKeyCompositor.compose(nodeHash, accAddrHash);
-            } else {
+//            if (type == TrieNodeType.STORAGE ||
+//                    type == TrieNodeType.CODE) {
+//                return NodeKeyCompositor.compose(nodeHash, accAddrHash);
+//            } else {
                 return nodeHash;
-            }
+//            }
         }
 
         public void reqSent(Long requestId) {
